@@ -29,8 +29,8 @@ function CarouselComponent() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>{item.org_name}</h3>
+          <p>{item.genre}</p>
         </Carousel.Caption>
       </Carousel.Item>
       )
