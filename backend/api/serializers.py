@@ -1,6 +1,7 @@
-from dataclasses import field
+from dataclasses import field, fields
+from importlib.metadata import files
 from rest_framework import serializers
-from .models import (User,UserDetail,UserOpinionAgent)
+from .models import (User,UserDetail,UserOpinionAgent,TrendingInsuranceAgents,CarLoan,HousingLoan)
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken,TokenError
 
@@ -27,6 +28,17 @@ class UserSerializer(serializers.ModelSerializer):
         model=User
         fields=['id','username','email']
 
+class CarLoanSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=CarLoan
+        fields='__all__'
+
+class TrendingInsuranceSerializer(serializers.ModelSerializer):
+    org_image=serializers.ImageField(max_length=None,allow_empty_file=False,use_url=True,required=False)
+    class Meta:
+        model=TrendingInsuranceAgents
+        fields='__all__'
+
 class UserDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model=UserDetail
@@ -35,3 +47,18 @@ class UserOpinionAgentSerializer(serializers.ModelSerializer):
     class Meta:
         model=UserOpinionAgent
         fields='__all__'
+
+class HousingLoanSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=HousingLoan
+        fields='__all__'
+
+class Medical_expense(serializers.ModelSerializer):
+    class Meta:
+        model=Medical_expense
+        fields='__all'
+
+class Electronic_Devices(serializers.ModelSerializer):
+    class Meta:
+        model=Electronic_Devices
+        fields='__all'
