@@ -32,8 +32,9 @@ class CarLoanSerializer(serializers.ModelSerializer):
     class Meta:
         model=CarLoan
         fields='__all__'
-        
+
 class TrendingInsuranceSerializer(serializers.ModelSerializer):
+    org_image=serializers.ImageField(max_length=None,allow_empty_file=False,use_url=True,required=False)
     class Meta:
         model=TrendingInsuranceAgents
         fields='__all__'
