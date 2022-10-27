@@ -1,6 +1,6 @@
 from rest_framework import generics,mixins,viewsets,status
-from .models import (User,UserDetail,UserOpinionAgent)
-from .serializers import (RegisterSerializer,UserSerializer,UserDetailSerializer,UserOpinionAgentSerializer)
+from .models import (User,UserDetail,UserOpinionAgent,TrendingInsuranceAgents)
+from .serializers import (RegisterSerializer,UserSerializer,UserDetailSerializer,UserOpinionAgentSerializer,TrendingInsuranceSerializer)
 from rest_framework_simplejwt.tokens import RefreshToken,AccessToken
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated,IsAuthenticatedOrReadOnly
@@ -15,10 +15,15 @@ class UserDetailViewSet(viewsets.GenericViewSet,mixins.CreateModelMixin,mixins.R
     serializer_class=UserDetailSerializer
     queryset=UserDetail.objects.all()
 
+class TrendingInsuranceAgentViewSet(viewsets.GenericViewSet,mixins.RetrieveModelMixin,mixins.ListModelMixin):
+    serializer_class=TrendingInsuranceSerializer
+    queryset=TrendingInsuranceAgents.objects.all()
+    
 class UserOpinionAgentViewset(viewsets.GenericViewSet,mixins.CreateModelMixin,mixins.RetrieveModelMixin):
+    permission_classes=[IsAuthenticatedOrReadOnly]
     serializer_class=UserOpinionAgentSerializer
     queryset=UserOpinionAgent.objects.all()
-    
+
 class BlacklistTokenView(APIView):
     permission_classes=[IsAuthenticated]
     def post(self,request):

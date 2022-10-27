@@ -67,10 +67,10 @@ class UserOpinionAgent(models.Model):
     def __str__(self):
         return self.message
 
-# class TrendingInsuranceAgents(models.Model):
-#     org_name=models.CharField(max_length=200)
-#     org_image=models.ImageField(upload_to="org-images")
-#     genre=models.CharField(max_length=200) 
-#     estimated_payable=models.FloatField()
-#     def __str__(self):
-#         return self.org_name
+class TrendingInsuranceAgents(models.Model):
+    org_name=models.CharField(max_length=200)
+    org_image=models.ImageField(upload_to="org-images")
+    genre=models.CharField(max_length=200) 
+    estimated_payable=models.FloatField()
+    def __str__(self):
+        return self.org_name
