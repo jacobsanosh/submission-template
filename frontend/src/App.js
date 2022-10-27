@@ -4,6 +4,7 @@ import './App.css';
 import { MainPage,Login } from './pages';
 import Carloan from './pages/CarLoan/Carloan';
 import Signup from './pages/Signup/Signup';
+import Dashboard from './pages/Dashboard/Dashboard';
  
 function App() {
   return (

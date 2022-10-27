@@ -1,7 +1,7 @@
 from dataclasses import field, fields
 from importlib.metadata import files
 from rest_framework import serializers
-from .models import (User,UserDetail,UserOpinionAgent,TrendingInsuranceAgents,CarLoan,HousingLoan,Medical_expense,Electronic_Devices)
+from .models import (User,UserDetail,UserOpinionAgent,TrendingInsuranceAgents,CarLoan,HousingLoan,Medical_expense,Electronic_Devices,DiscussionBoard)
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken,TokenError
 
@@ -27,6 +27,12 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model=User
         fields=['id','username','email']
+
+class DiscussionSerializer(serializers.ModelSerializer):
+    image=serializers.ImageField(max_length=None,allow_empty_file=False,use_url=True,required=False)
+    class Meta:
+        model=DiscussionBoard
+        fields='__all__'
 
 class CarLoanSerializer(serializers.ModelSerializer):
     class Meta:

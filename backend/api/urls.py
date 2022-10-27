@@ -4,7 +4,7 @@ from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
 from .views import (BlacklistTokenView,LoggedInUserView,RegisterView,UserDetailViewSet,
-                    HousingLoanViewset,CarLoanViewset,UserOpinionAgentViewset,TrendingInsuranceAgentViewSet,ElectronicDevicesViewset,MedicalViewset)
+                    HousingLoanViewset,CarLoanViewset,UserViewSet,UserOpinionAgentViewset,TrendingInsuranceAgentViewSet,ElectronicDevicesViewset,MedicalViewset,DiscussionViewset)
 router=DefaultRouter()
 router.register('register',RegisterView,basename='register')
 router.register('user-detail',UserDetailViewSet,basename='user-detail')
@@ -14,6 +14,8 @@ router.register('car-loans',CarLoanViewset,basename='car-loans')
 router.register('housing-loans',HousingLoanViewset,basename='housing-loans')
 router.register('electronic-devices',ElectronicDevicesViewset,basename='electronic-devices')
 router.register('medical-ins',MedicalViewset,basename='medical-ins')
+router.register('discussions',DiscussionViewset,basename='discussions')
+router.register('users',UserViewSet,basename='users')
 
 urlpatterns = [
     path('',include(router.urls)),
