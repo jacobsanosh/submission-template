@@ -3,13 +3,17 @@ from django.contrib import admin
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
-from .views import (BlacklistTokenView,LoggedInUserView,RegisterView,UserDetailViewSet,CarLoanViewset,UserOpinionAgentViewset,TrendingInsuranceAgentViewSet)
+from .views import (BlacklistTokenView,LoggedInUserView,RegisterView,UserDetailViewSet,
+                    HousingLoanViewset,CarLoanViewset,UserOpinionAgentViewset,TrendingInsuranceAgentViewSet)
 router=DefaultRouter()
 router.register('register',RegisterView,basename='register')
 router.register('user-detail',UserDetailViewSet,basename='user-detail')
 router.register('opinions',UserOpinionAgentViewset,basename='opinions')
 router.register('trending',TrendingInsuranceAgentViewSet,basename='trending')
 router.register('car-loans',CarLoanViewset,basename='car-loans')
+router.register('housing-loans',HousingLoanViewset,basename='housing-loans')
+
+
 
 urlpatterns = [
     path('',include(router.urls)),
