@@ -87,9 +87,13 @@ class HousingLoan(models.Model) :
     def __str__(self):
         return self.bank_name
 
+class DiscussionBoard(models.Model):
+    user_foreign=models.ForeignKey(User,on_delete=models.CASCADE)
+    message=models.CharField(max_length=1000)
+
 class TrendingInsuranceAgents(models.Model):
     org_name=models.CharField(max_length=200)
-    org_image=models.ImageField(upload_to='org-images',blank=True,null=True)
+    org_image=models.ImageField(upload_to='org_images',blank=True,null=True)
     genre=models.CharField(max_length=200) 
     estimated_payable=models.FloatField()
     def __str__(self):
