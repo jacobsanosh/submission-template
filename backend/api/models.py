@@ -1,5 +1,6 @@
 from distutils.command.upload import upload
 from email.policy import default
+from inspect import modulesbyfile
 from django.db import models
 from django.contrib.auth.models import (AbstractBaseUser,BaseUserManager,PermissionsMixin)
 # Create your models here.
@@ -44,3 +45,32 @@ class User(AbstractBaseUser,PermissionsMixin):
     def tokens(self):
         return ''
         
+class UserDetail(models.Model):
+    name=models.CharField(max_length=100)
+    user_foreign=models.ForeignKey(User,on_delete=models.CASCADE)
+    age=models.IntegerField()
+    job=models.CharField(max_length=100)
+    t_income=models.FloatField()
+    nt_income=models.FloatField()
+    tax_percentage=models.FloatField()
+    miscellaneous_expenditure=models.FloatField()
+    place=models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class UserOpinionAgent(models.Model):
+    insurance_categ=models.CharField(max_length=200)
+    user_foreign=models.ForeignKey(User,on_delete=models.CASCADE)
+    message=models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.message
+
+class TrendingInsuranceAgents(models.Model):
+    org_name=models.CharField(max_length=200)
+    org_image=models.ImageField(upload_to="org-images")
+    genre=models.CharField(max_length=200) 
+    estimated_payable=models.FloatField()
+    def __str__(self):
+        return self.org_name
