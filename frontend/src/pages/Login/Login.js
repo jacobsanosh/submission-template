@@ -3,13 +3,14 @@ import './Login.css'
 import baseUrl from '../../utils/urls'
 // import axios from 'axios'
 import axiosInstance from '../../utils/axios'
-// import {useNavigate} from 'react-router-dom'
+ import {useNavigate} from 'react-router-dom'
 import {useState} from 'react'
 import axios from 'axios'
+import { Navigate } from 'react-router-dom'
 
 
 function Login() {
-	// const navigate=useNavigate();
+	 const navigate=useNavigate();
 
 
 	const [email,setEmail]=useState("")
@@ -25,7 +26,8 @@ function Login() {
             localStorage.setItem('access_token',res.data.access);
             localStorage.setItem('refresh_token',res.data.refresh);
             axiosInstance.defaults.headers['Authorization']= 'Bearer ' + localStorage.getItem('access_token');
-            
+            if(res.status===200)
+			navigate('/')
         }).catch((err)=>console.log(err))
 
     }
