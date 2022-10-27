@@ -4,8 +4,9 @@ import MainLayout from '../../components/MainLayout/MainLayout'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import axiosInstance from '../../utils/axios'
-import { useEffect } from 'react'
+import { useEffect,useState } from 'react'
 import baseUrl from '../../utils/urls'
+import Carcards from './Carcards'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 export const data = {
@@ -28,16 +29,21 @@ export const data = {
       },
     ],
   };
+
+  
   
 function Carloan() {
+
+  const [cardata,setCardata]= useState([])
+
     useEffect(()=>{
        axiosInstance.get(`${baseUrl}/car-loans/`).then((res)=>{
-          const data=res.data;
+          setCardata(res.data)
           console.log(res.data)
 
        })
 
-    })
+    },[])
 
     
   return (
@@ -45,24 +51,13 @@ function Carloan() {
     <div class="Carloan__container">
         <div class="Carloan__left">
             <h1>Car loan calulation</h1>
-            <div className="Carloan__name">
-                <ul>
-                    <li>
-                        <h3>audi</h3>
-                    </li>
-                    <li>
-                        <h3>BMW</h3>
-                    </li>
-                </ul>  
-            </div>
-            <h1>rate of interest:5.4</h1>
-            <h1>duration:10</h1>
-            <h1>Emi:10000</h1>
-            <div className="Carloan__agents">
-                <h1>agent name:demo</h1>
-                <h1>agent phone</h1>
-            </div>
-            
+
+                  {cardata.map((item)=>{
+                  return(
+                   <Carcards key={item.id} agent={ item.agent} carname={item.car_name} duration={item.duration} interestrate={item.interest_rate} phno={item.phno} />
+   ) })}
+
+           
             <h1>pie chart</h1>
             <div className="Carloan_canvas">
             <p>blue-total income</p>
@@ -73,7 +68,7 @@ function Carloan() {
         <div class="Carloan__right">
             <h1>add section</h1>
         </div>
-    </div>
+    </div> 
     </MainLayout>
   )
 }
