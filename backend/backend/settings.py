@@ -54,7 +54,16 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    
 ]
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 REST_FRAMEWORK={
     'DEFAULT_PERMISSION_CLASSES':('rest_framework.permissions.AllowAny',),
     'DEFAULT_AUTHENTICATION_CLASSES':(

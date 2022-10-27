@@ -56,7 +56,8 @@ class UserDetail(models.Model):
     tax_percentage=models.FloatField()
     miscellaneous_expenditure=models.FloatField()
     place=models.CharField(max_length=100)
-
+    total_saving=models.FloatField()
+    
     def __str__(self):
         return self.name
 
@@ -103,6 +104,8 @@ class TrendingInsuranceAgents(models.Model):
     estimated_payable=models.FloatField()
     def __str__(self):
         return self.org_name
+
+
 class Medical_expense(models.Model):
     scheme_name=models.CharField(max_length=200)
     agent=models.CharField(max_length=200)
