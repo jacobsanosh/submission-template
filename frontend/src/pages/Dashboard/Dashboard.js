@@ -1,7 +1,6 @@
 import React from 'react'
 import MainLayout from '../../components/MainLayout/MainLayout'
 import './Dashboard.css'
-import graph from '../../assets/png/graph.png'
 import graph1 from '../../assets/jpeg/graph1.jpg'
 
 
