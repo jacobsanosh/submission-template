@@ -103,3 +103,24 @@ class TrendingInsuranceAgents(models.Model):
     estimated_payable=models.FloatField()
     def __str__(self):
         return self.org_name
+class Medical_expense(models.Model):
+    scheme_name=models.CharField(max_length=200)
+    agent=models.CharField(max_length=200)
+    interest_rate=models.FloatField()
+    duration_of_repayment=models.IntegerField()
+    monthly_payment=models.IntegerField()
+    phno_agent=models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.scheme_name
+
+class Electronic_Devices(models.Model):
+    scheme_name=models.CharField(max_length=200)
+    agent=models.CharField(max_length=200)
+    interest_rate=models.FloatField()
+    duration_of_repayment=models.IntegerField()
+    monthly_payment=models.IntegerField()
+    phno_agent=models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.scheme_name
