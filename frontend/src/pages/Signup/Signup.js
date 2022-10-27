@@ -2,7 +2,7 @@ import React from 'react'
 import '../Login/Login.css'
 import baseUrl from '../../utils/urls'
 import axios from 'axios'
-import { useEffect,useState } from 'react'
+import { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 
 
