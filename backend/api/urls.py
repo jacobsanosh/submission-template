@@ -2,9 +2,11 @@ from django.contrib import admin
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
-from .views import (BlacklistTokenView,LoggedInUserView,RegisterView)
+from .views import (BlacklistTokenView,LoggedInUserView,RegisterView,UserDetailViewSet,UserOpinionAgentViewset)
 router=DefaultRouter()
 router.register('register',RegisterView,basename='register')
+router.register('user-detail',UserDetailViewSet,basename='user-detail')
+router.register('opinions',UserOpinionAgentViewset,basename='opinions')
 
 urlpatterns = [
     path('',include(router.urls)),
