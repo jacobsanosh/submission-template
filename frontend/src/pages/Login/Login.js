@@ -5,8 +5,8 @@ import baseUrl from '../../utils/urls'
 import axiosInstance from '../../utils/axios'
  import {useNavigate} from 'react-router-dom'
 import {useState} from 'react'
-import axios from 'axios'
-import { Navigate } from 'react-router-dom'
+
+
 
 
 function Login() {
