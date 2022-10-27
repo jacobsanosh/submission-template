@@ -1,10 +1,18 @@
 import React from 'react'
 import '../Login/Login.css'
-import 
+import baseUrl from '../../utils/urls'
+import axios from 'axios'
+import { useEffect,useState } from 'react'
+import {useNavigate} from 'react-router-dom'
 
 
 
 function Signup() {
+
+const[email,setEmail]= useState("")
+const[username,setUsername]=useState("");
+const[password,setPassword]=useState("");
+
   return (
     <div>
           <div class="Login__container">
