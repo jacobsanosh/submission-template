@@ -3,6 +3,9 @@ import './Carloan.css'
 import MainLayout from '../../components/MainLayout/MainLayout'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+import axiosInstance from '../../utils/axios'
+import { useEffect } from 'react'
+import baseUrl from '../../utils/urls'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 export const data = {
@@ -27,7 +30,15 @@ export const data = {
   };
   
 function Carloan() {
-    
+    useEffect(()=>{
+       axiosInstance.get(`${baseUrl}/car-loans/`).then((res)=>{
+          const data=res.data;
+          console.log(res.data)
+
+       })
+
+    })
+
     
   return (
     <MainLayout>
