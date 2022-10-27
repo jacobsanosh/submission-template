@@ -11,21 +11,21 @@ function Dashboard() {
     <div className='dashboard__container'>
      <div className='dashboard__leftcont'>
       <div className='dashboard__graphchart'>
-       <div className='dashboard__graphsection'>
-                <img className='d__graph' src={graph1} />
-       </div>
-       <div className='dashboard__chart'>
-      
-       </div>
+        <div className='dashboard__graphsection'>
+                  <img className='d__graph' src={graph1} />
+        </div>
+        <div className='dashboard__chart'>
+                  <img className='d__graph' src={graph1} />
+        </div>
 
       </div>
       <div className='dashboard__premium'>
-      
+          <img className='d__graph' src={graph1} />
       </div>
      </div>
      <div className='dashboard__profile'>
     
-    
+     <img className='d__graph' src={graph1} />
      </div>
     
     </div>
