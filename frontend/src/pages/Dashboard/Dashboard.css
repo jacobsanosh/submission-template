@@ -1,20 +1,39 @@
-.dashboard__container{
+.dashboard__container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     /* flex-direction: column; */
     /* margin-bottom: 5rem; */
-
+    height: 100vh;
 }
 
-.d__graph{
-    
+.dashboard__graphchart {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.dashboard__leftcont{
-
+.dashboard__graphchart img {
+    height: 400px;
 }
 
-.dashboard__rightcont{
+.dashboard__leftcont {
+    width: 70%;
+    border: 5px solid;
+}
 
+.dashboard__leftcont img {
+    height: 200px;
+}
+
+.dashboard__rightcont img {
+    height: 200px;
+}
+
+.dashboard__profile {
+    width: 30%;
+    border: 5px solid red;
+}
+
+.dashboard__profile img {
+    height: 200px;
 }

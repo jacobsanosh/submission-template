@@ -2,6 +2,7 @@ import React from "react";
 import './Discussion.css'
 function DiscCard({ image, link, opinion,user_foreign}) {
     
+    
   return (
     <div data-aos="zoom-in" data-aos-delay="150" className="contactCard">
       <div className="contact_img">
