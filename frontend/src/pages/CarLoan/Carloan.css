@@ -1,0 +1,20 @@
+.Carloan__container {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+
+.Carloan__left {
+    width: 70%;
+    background: rgb(212, 186, 186);
+}
+
+.Carloan__right {
+    width: 30%;
+    background: rgb(116, 65, 65);
+}
+
+.Carloan_canvas>canvas {
+    height: 300px!important;
+    width: 300px!important;
+}

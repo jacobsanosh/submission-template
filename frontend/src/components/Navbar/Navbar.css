@@ -5,6 +5,7 @@
     align-items: center;
     background: rgb(2, 0, 36);
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(3, 30, 58, 1) 24%, rgba(5, 69, 87, 1) 45%, rgba(38, 38, 122, 1) 82%, rgba(51, 55, 112, 1) 100%);
+    padding: .5rem;
 }
 
 .Navbar__logo {
