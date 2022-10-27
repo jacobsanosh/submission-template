@@ -1,0 +1,150 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   
+    background-repeat: no-repeat;
+    background-position: -5rem -5rem;
+    background-size: 50%;
+}
+
+.contact__container {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.section__header {
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    color: #1E1E1E;
+}
+
+.contact__cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2.8rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contactCard {
+    width: 250px;
+    height: 320px;
+    background: #FFFFFF;
+    box-shadow: 0px 14px 30px 2px rgba(0, 0, 0, 0.06);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 0.25rem;
+    font-family: var(--primary-font);
+}
+
+.contact_img {
+    border-radius: 15px;
+    width: 100%;
+}
+
+.contact_img img {
+    width: 100%;
+    height: 150px;
+    border-radius: 15px;
+}
+
+.contactCard h2 {
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #000000;
+    margin-top: 0.5rem;
+}
+
+.contactCard h3 {
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.contact_social {
+    margin-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.contact_social a {
+    text-decoration: none;
+    cursor: pointer;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 39px;
+    height: 39px;
+    color: #1E1E1E;
+    background: #ffffff;
+}
+
+.contact_social a:hover {
+    background: #1E1E1E;
+    color: #ffffff;
+}
+
+
+.contact_social_icon {
+    font-size: 1.25rem;
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+    .contact {
+        background: none;
+    }
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+
+    .contact {
+        background: none;
+        margin-top: auto;
+    }
+
+}
+
+@media only screen and (max-width:1300px){
+
+}
+@media only screen and (max-width:1200px){
+    
+}
+@media only screen and (max-width:1100px){
+    .contact{
+        background-image: none;
+        margin-top: auto;
+    }
+}
+@media only screen and (max-width:992px){
+    
+}
+@media only screen and (max-width:800px){
+    
+}
+@media only screen and (max-width:600px){
+    
+}
