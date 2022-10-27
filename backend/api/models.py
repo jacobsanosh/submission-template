@@ -1,6 +1,7 @@
 from distutils.command.upload import upload
 from email.policy import default
 from inspect import modulesbyfile
+from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.contrib.auth.models import (AbstractBaseUser,BaseUserManager,PermissionsMixin)
 # Create your models here.
@@ -76,10 +77,19 @@ class CarLoan(models.Model):
     phno=models.CharField(max_length=15)
     def __str__(self):
         return self.car_name
-        
+
+class HousingLoan(models.Model) :
+    bank_name=models.CharField(max_length=200)
+    interest_rate=models.FloatField()
+    duration=models.IntegerField()
+    monthly_payment=models.FloatField()
+    phno=models.CharField(max_length=15)
+    def __str__(self):
+        return self.bank_name
+
 class TrendingInsuranceAgents(models.Model):
     org_name=models.CharField(max_length=200)
-    org_image=models.ImageField(upload_to="org-images")
+    org_image=models.ImageField(upload_to='org-images',blank=True,null=True)
     genre=models.CharField(max_length=200) 
     estimated_payable=models.FloatField()
     def __str__(self):
