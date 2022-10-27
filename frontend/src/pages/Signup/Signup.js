@@ -9,9 +9,28 @@ import {useNavigate} from 'react-router-dom'
 
 function Signup() {
 
+const navigate = useNavigate()
+
 const[email,setEmail]= useState("")
 const[username,setUsername]=useState("");
 const[password,setPassword]=useState("");
+
+const handlesubmit=async(e)=>{
+	await axios.post(`${baseUrl}/register/`,{
+            "email" : email,
+            "username":username,
+            "password":password
+        }).then((Response)=>{
+            console.log(Response)
+            if(Response.status===201){
+              
+              navigate('/login')
+            }
+      
+       
+       })
+
+}
 
   return (
     <div>
@@ -29,7 +48,7 @@ const[password,setPassword]=useState("");
 			<input type="email" autocomplete placeholder="Email"  onChange={(e)=>setEmail(e.target.value)} />
             <input type="text" autocomplete placeholder="username" onChange={(e)=>setUsername(e.target.value)}  />
 			<input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)} />
-			<button class='Login__btn' type="submit">Sign Up</button>
+			<button class='Login__btn' type="submit" onClick={handlesubmit} >Sign Up</button>
 		</div>
 	</div>
 </div>
