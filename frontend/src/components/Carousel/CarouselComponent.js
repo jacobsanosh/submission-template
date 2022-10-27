@@ -21,6 +21,9 @@ function CarouselComponent() {
       return(
       <Carousel.Item key={item.id}>
         <img
+          style={{
+            height:"100vh"
+          }}
           className="d-block w-100"
           src={item.org_image}
           alt="First slide"
