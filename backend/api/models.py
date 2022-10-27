@@ -67,6 +67,16 @@ class UserOpinionAgent(models.Model):
     def __str__(self):
         return self.message
 
+class CarLoan(models.Model):
+    agent=models.CharField(max_length=100)
+    car_name=models.CharField(max_length=100)
+    interest_rate=models.FloatField()
+    duration=models.IntegerField()
+    monthly_payment=models.FloatField()
+    phno=models.CharField(max_length=15)
+    def __str__(self):
+        return self.car_name
+        
 class TrendingInsuranceAgents(models.Model):
     org_name=models.CharField(max_length=200)
     org_image=models.ImageField(upload_to="org-images")
