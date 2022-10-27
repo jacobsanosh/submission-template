@@ -8,6 +8,8 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/'component={<MainPage/>}/>
+      
+        
       </Routes>
       </BrowserRouter>
     </div>
