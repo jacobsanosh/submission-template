@@ -1,7 +1,7 @@
 from rest_framework import generics,mixins,viewsets,status
-from .models import (User,UserDetail,UserOpinionAgent,TrendingInsuranceAgents,CarLoan,HousingLoan)
+from .models import (User,UserDetail,UserOpinionAgent,TrendingInsuranceAgents,CarLoan,HousingLoan,Electronic_Devices,Medical_expense)
 from .serializers import (RegisterSerializer,UserSerializer,UserDetailSerializer,
-                        CarLoanSerializer,UserOpinionAgentSerializer,TrendingInsuranceSerializer,HousingLoanSerializer)
+                        CarLoanSerializer,UserOpinionAgentSerializer,TrendingInsuranceSerializer,HousingLoanSerializer,Medical_expenseSerializer,Electronic_DevicesSerializer)
 from rest_framework_simplejwt.tokens import RefreshToken,AccessToken
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated,IsAuthenticatedOrReadOnly
@@ -15,6 +15,14 @@ class RegisterView(viewsets.GenericViewSet,mixins.CreateModelMixin,mixins.Retrie
 class UserDetailViewSet(viewsets.GenericViewSet,mixins.CreateModelMixin,mixins.RetrieveModelMixin,mixins.ListModelMixin,mixins.UpdateModelMixin):
     serializer_class=UserDetailSerializer
     queryset=UserDetail.objects.all()
+
+class ElectronicDevicesViewset(viewsets.GenericViewSet,mixins.RetrieveModelMixin,mixins.ListModelMixin):
+    serializer_class=Electronic_DevicesSerializer
+    queryset=Electronic_Devices.objects.all()
+
+class MedicalViewset(viewsets.GenericViewSet,mixins.RetrieveModelMixin,mixins.ListModelMixin):
+    serializer_class=Medical_expenseSerializer
+    queryset=Medical_expense.objects.all()
 
 class CarLoanViewset(viewsets.GenericViewSet,mixins.RetrieveModelMixin,mixins.ListModelMixin):
     permission_classes=[IsAuthenticated]

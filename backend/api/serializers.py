@@ -1,7 +1,7 @@
 from dataclasses import field, fields
 from importlib.metadata import files
 from rest_framework import serializers
-from .models import (User,UserDetail,UserOpinionAgent,TrendingInsuranceAgents,CarLoan,HousingLoan)
+from .models import (User,UserDetail,UserOpinionAgent,TrendingInsuranceAgents,CarLoan,HousingLoan,Medical_expense,Electronic_Devices)
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken,TokenError
 
@@ -52,3 +52,13 @@ class HousingLoanSerializer(serializers.ModelSerializer):
     class Meta:
         model=HousingLoan
         fields='__all__'
+
+class Medical_expenseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Medical_expense
+        fields='__all'
+
+class Electronic_DevicesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Electronic_Devices
+        fields='__all'

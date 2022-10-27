@@ -8,7 +8,7 @@ const axiosInstance= axios.create({
         Authorization: localStorage.getItem('access_token')
                    ? 'Bearer ' + localStorage.getItem('access_token')
                    : null,
-               'content-Type': 'application/json',
+               'Content-Type': 'application/json',
                accept:'*/*'    
             
     }
