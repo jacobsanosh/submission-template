@@ -1,8 +1,20 @@
 import React from 'react'
-
+import baseUrl from '../../utils/urls';
 import Carousel from 'react-bootstrap/Carousel';
+import axios from 'axios'
+import {useEffect,useState} from 'react'
 
 function CarouselComponent() {
+
+  const [carousel,setCarousel]=useState([]);
+
+  useEffect(()=>{
+    axios.get(`${baseUrl}/trending/`).then((response)=>{
+      console.log(response)
+      setCarousel(response.data)
+    })
+  },[])
+
   return (
     <Carousel>
       <Carousel.Item>
