@@ -1,7 +1,7 @@
 .Carloan__container {
     display: flex;
     justify-content: space-evenly;
-    height: 100vh;
+    min-height: 100vh;
     background: rgb(189,231,43);
 background: linear-gradient(90deg, rgba(189,231,43,1) 5%, rgba(15,217,163,1) 88%);
 }
@@ -11,9 +11,17 @@ background: linear-gradient(90deg, rgba(189,231,43,1) 5%, rgba(15,217,163,1) 88%
     /* background: rgb(212, 186, 186); */
 }
 
+
 .Carloan__right {
     width: 30%;
     /* background: rgb(116, 65, 65); */
+}
+.car_loans_container{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
 }
 
 .Carloan_canvas>canvas {

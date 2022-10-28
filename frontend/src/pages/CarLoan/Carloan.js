@@ -51,19 +51,25 @@ function Carloan() {
     <div class="Carloan__container">
         <div class="Carloan__left">
             <h1>Car loan calulation</h1>
-
-                  {cardata.map((item)=>{
-                  return(
-                   <Carcards key={item.id} agent={ item.agent} carname={item.car_name} duration={item.duration} interestrate={item.interest_rate} phno={item.phno} />
-   ) })}
-
-           
             <h1>pie chart</h1>
             <div className="Carloan_canvas">
             <p>blue-total income</p>
             <p>grey-10% income</p>
-            <Pie data={data} />;
+            
+            <Pie style={{margin:'0 auto'}} data={data} />;
+           
+            
             </div>
+                <div className="car_loans_container">
+
+               
+                  {cardata.map((item)=>{
+                  return(
+                   <Carcards key={item.id} agent={ item.agent} carname={item.car_name} duration={item.duration} interestrate={item.interest_rate} phno={item.phno} />
+   ) })}
+ </div>
+           
+            
         </div>
         <div class="Carloan__right">
             <h1>add section</h1>
