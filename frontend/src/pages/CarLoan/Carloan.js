@@ -56,7 +56,7 @@ function Carloan() {
             <p>blue-total income</p>
             <p>grey-10% income</p>
             
-            <Pie style={{margin:'0 auto'}} data={data} />;
+            <Pie style={{margin:'0 auto'}} data={data} />
            
             
             </div>
