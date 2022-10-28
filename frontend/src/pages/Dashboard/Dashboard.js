@@ -11,10 +11,10 @@ function Dashboard() {
      <div className='dashboard__leftcont'>
       <div className='dashboard__graphchart'>
         <div className='dashboard__graphsection'>
-                  <img className='d__graph' src={graph1} />
+                  <img className='d__graph' src={graph1} alt="graph_ui" />
         </div>
         <div className='dashboard__chart'>
-                  <img className='d__graph' src={graph1} />
+                  <img className='d__graph' src={graph1}alt="graph_ui" />
         </div>
 
       </div>
@@ -36,7 +36,7 @@ function Dashboard() {
      </div>
      <div className='dashboard__profile'>
       <div className='dashboard__namespic'>
-       <img className='propic' src={propic} />
+       <img className='propic' src={propic}alt="graph_ui" />
        <div className='dashboard__names'>
          <h3>Catylyn</h3>
          <h5>Caty</h5>

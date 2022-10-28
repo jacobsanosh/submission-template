@@ -15,6 +15,7 @@ function Navbar() {
           <Dropdown.Item className='drop__items' href="#/action-2">Another action</Dropdown.Item>
           <Dropdown.Item className='drop__items' href="#/action-3">Something else</Dropdown.Item>
         </DropdownButton>
+          <li><a href="/dashboard">Dashboard</a></li>
 		    <li><a href="/login">Login</a></li> 
         </ul>
       </div>
