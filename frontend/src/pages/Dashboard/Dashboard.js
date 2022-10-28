@@ -3,6 +3,7 @@ import MainLayout from '../../components/MainLayout/MainLayout'
 import './Dashboard.css'
 import graph1 from '../../assets/jpeg/graph1.jpg'
 import propic from '../../assets/jpeg/propic.jpg'
+import liquid from '../../assets/png/liquid.png'
 
 function Dashboard() {
   return (
@@ -33,6 +34,15 @@ function Dashboard() {
 
        </div>
           
+      </div>
+      <div className='dashboard__graphchart'>
+        <div className='dashboard__graphsection'>
+        <img className='d__graph' src={liquid} alt="graph_ui" />
+        </div>
+        <div className='dashboard__chart'>
+               <h3>your investment is: 20000</h3>
+              <h3>your current rate is: 40%</h3>
+        </div>
       </div>
      </div>
      <div className='dashboard__profile'>
