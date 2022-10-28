@@ -32,8 +32,115 @@
 .dashboard__profile {
     width: 30%;
     border: 5px solid red;
+    display: flex;
+    flex-direction: column;
+    background: rgb(189,231,43);
+background: linear-gradient(90deg, rgba(189,231,43,1) 5%, rgba(15,179,217,1) 88%);
+    
+}
+.dashboard__namespic{
+    display: flex;
+    
 }
 
 .dashboard__profile img {
-    height: 200px;
+    height: 7rem;
 }
+
+.dashboarrd__names{
+
+    display: flex;
+    flex-direction: column;
+    
+}
+.dashboard__details{
+
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard__premium{
+
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 14px 30px 2px rgba(0, 0, 0, 0.06);
+    border-radius: 30px;
+}
+.dashboard__upgrade{
+    display: flex;
+    flex-direction: column;
+}
+.dashboard__btns{
+    display: flex;
+    justify-content: center;
+    
+}
+
+
+/*btn styles*/
+.glow-on-hover {
+    width: 93px;
+    height: 37px;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+   
+    font-family:Arial, Helvetica, sans-serif;
+    padding-top: 5px;
+  }
+  /* .name__login__container{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items: center;
+    padding-top: 2px;
+    width: fit-content;
+    align-items: center;
+  } */
+  .glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+  }
+  
+  .glow-on-hover:active {
+    color: #000
+  }
+  
+  .glow-on-hover:active:after {
+    background: transparent;
+  }
+  
+  .glow-on-hover:hover:before {
+    opacity: 1;
+  }
+  
+  .glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  
